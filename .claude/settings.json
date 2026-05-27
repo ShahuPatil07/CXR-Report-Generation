@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(tar -tzf NLMCXR_png.tgz)",
+      "Bash(tar -tzf NLMCXR_reports.tgz)",
+      "Bash(tar -xzf NLMCXR_reports.tgz ecgen-radiology/1.xml -O)",
+      "Bash(tar -xzf NLMCXR_reports.tgz ecgen-radiology/2.xml -O)",
+      "Bash(python -c \"import sys; print\\(sys.executable\\)\")",
+      "Bash(pip list *)",
+      "Bash(findstr -i \"pandas numpy matplotlib\")",
+      "Bash(jupyter kernelspec *)",
+      "PowerShell(jupyter kernelspec list 2>&1)",
+      "PowerShell(python -m jupyter kernelspec list 2>&1)",
+      "PowerShell(python -m jupyter lab --version 2>&1)",
+      "PowerShell(python -c \"import jupyter_client; print\\(jupyter_client.__version__\\)\" 2>&1)",
+      "PowerShell(Get-ChildItem \"$env:APPDATA\\\\jupyter\\\\kernels\" -ErrorAction SilentlyContinue; Get-ChildItem \"$env:LOCALAPPDATA\\\\jupyter\\\\kernels\" -ErrorAction SilentlyContinue)",
+      "PowerShell(python -m jupyter_client kernelspec list 2>&1)",
+      "PowerShell(python -c \"from jupyter_client.kernelspec import KernelSpecManager; m = KernelSpecManager\\(\\); print\\(m.get_all_specs\\(\\).keys\\(\\)\\)\")",
+      "PowerShell(python -c \"from jupyter_client.kernelspec import KernelSpecManager; import json; m = KernelSpecManager\\(\\); s = m.get_all_specs\\(\\); print\\(json.dumps\\({k: v['spec']['argv'] for k,v in s.items\\(\\)}, indent=2\\)\\)\")",
+      "PowerShell(Get-ChildItem \"$env:LOCALAPPDATA\\\\jupyter\\\\kernels\" -Recurse -Filter \"kernel.json\" -ErrorAction SilentlyContinue | ForEach-Object { Write-Output $_.FullName; Get-Content $_.FullName })",
+      "PowerShell(python -c \"from jupyter_client.kernelspec import KernelSpecManager; m = KernelSpecManager\\(\\); s = m.get_all_specs\\(\\); import json; print\\(json.dumps\\(list\\(s.values\\(\\)\\)[0]['spec'], indent=2\\)\\)\")",
+      "Skill(claude-api)",
+      "Skill(claude-api:*)"
+    ]
+  }
+}
